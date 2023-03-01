@@ -10,6 +10,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     createUser: (state, action) => (state = action.payload),
+    deleteUser: (state) => (state = initialState),
     // decrement: (state) => {
     //   state.value -= 1;
     // },
@@ -20,8 +21,9 @@ export const userSlice = createSlice({
   },
 });
 
-export const { createUser } = userSlice.actions;
+export const { createUser, deleteUser } = userSlice.actions;
 
-// export const selectCount = (state) => state.counter.value;
+export const getName = (state) => state.user.name;
+export const getDeposit = (state) => state.user.deposit;
 
 export default userSlice.reducer;

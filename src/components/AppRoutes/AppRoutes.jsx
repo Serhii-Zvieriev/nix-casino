@@ -1,4 +1,9 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { getName } from "../../redux/userSlice";
 
 import Page1 from "../../pages/Page1";
 import Page2 from "../../pages/Page2";
@@ -9,6 +14,15 @@ import Page6 from "../../pages/Page6";
 import Page7 from "../../pages/Page7";
 
 export default function AppRoutes() {
+  const navigate = useNavigate();
+  const name = useSelector(getName);
+
+  useEffect(() => {
+    if (name === "") {
+      navigate("/", { replace: true });
+    }
+  }, [name, navigate]);
+
   return (
     <Routes>
       <Route path="/" element={<Page1 />} />

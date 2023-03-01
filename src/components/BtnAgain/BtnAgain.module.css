@@ -1,0 +1,13 @@
+button {
+  margin-right: 8px;
+  width: 116px;
+  height: 28px;
+  font-size: 14px;
+  background-color: var(--light-bcg-color);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(60%);
+}
