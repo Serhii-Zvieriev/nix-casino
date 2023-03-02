@@ -16,6 +16,7 @@ export default function Page1() {
       createUser({
         name,
         deposit,
+        balance: deposit * 2,
       })
     );
     navigate("/page2", { replace: true });

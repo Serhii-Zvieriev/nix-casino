@@ -2,6 +2,7 @@ h2 {
   display: block;
   margin-top: 22px;
   margin-left: 28px;
+  margin-bottom: 32px;
   width: 602px;
   height: 48px;
   text-align: center;
@@ -32,4 +33,28 @@ aside {
   width: 235px;
   height: 660px;
   background-color: var(--light-bcg-color);
+}
+
+ul {
+  display: flex;
+  margin-left: 28px;
+  justify-content: space-around;
+}
+
+li {
+  width: 190px;
+  height: 178px;
+  /* padding-top: 16px; */
+  background-color: var(--light-bcg-color);
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+img {
+  margin: 0 auto;
 }

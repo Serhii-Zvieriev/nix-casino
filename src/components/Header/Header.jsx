@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import BtnAgain from "../BtnAgain/BtnAgain";
-import { getName, getDeposit } from "../../redux/userSlice";
+import { getName, getDeposit, getBalance } from "../../redux/userSlice";
 import s from "./Header.module.css";
 export default function Header() {
   const name = useSelector(getName);
   const deposit = useSelector(getDeposit);
-  const [balance, setBalance] = useState(deposit * 2);
+  const balance = useSelector(getBalance);
+
   return (
     <header className={s.header}>
       <div className={s.logo}>

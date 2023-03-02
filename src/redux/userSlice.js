@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   name: "",
   deposit: 0,
+  balance: 0,
 };
 
 export const userSlice = createSlice({
@@ -25,5 +26,6 @@ export const { createUser, deleteUser } = userSlice.actions;
 
 export const getName = (state) => state.user.name;
 export const getDeposit = (state) => state.user.deposit;
+export const getBalance = (state) => state.user.balance;
 
 export default userSlice.reducer;
