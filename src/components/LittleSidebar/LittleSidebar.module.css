@@ -1,0 +1,9 @@
+.aside {
+  margin-top: 76px;
+  padding-top: 16px;
+  width: 236px;
+  height: 320px;
+  overflow: auto;
+  text-align: center;
+  background-color: var(--light-bcg-color);
+}

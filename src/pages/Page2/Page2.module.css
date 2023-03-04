@@ -1,4 +1,4 @@
-h2 {
+.h2 {
   display: block;
   margin-top: 22px;
   margin-left: 28px;
@@ -12,7 +12,7 @@ h2 {
   background-color: var(--light-bcg-color);
 }
 
-p {
+.p {
   margin-top: 46px;
   margin-left: 28px;
   width: 602px;
@@ -28,33 +28,40 @@ p {
   display: flex;
 }
 
-aside {
+.aside {
   margin-left: 31px;
   width: 235px;
   height: 660px;
   background-color: var(--light-bcg-color);
 }
 
-ul {
+.ul {
   display: flex;
   margin-left: 28px;
   justify-content: space-around;
 }
 
-li {
+.li {
   width: 190px;
   height: 178px;
   /* padding-top: 16px; */
   background-color: var(--light-bcg-color);
 }
 
-h3 {
+.li:hover {
+  filter: brightness(80%);
+}
+
+.h3 {
+  margin-top: 0;
+  margin-bottom: 22px;
+  padding-top: 16px;
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 22px;
+
   text-align: center;
 }
 
-img {
+.img {
   margin: 0 auto;
 }

@@ -1,4 +1,4 @@
-button {
+.button {
   margin-right: 8px;
   width: 116px;
   height: 28px;
@@ -8,6 +8,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   filter: brightness(60%);
 }

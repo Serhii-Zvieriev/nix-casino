@@ -28,8 +28,8 @@ export default function AppRoutes() {
       <Route path="/login" element={<Page1 />} />
       <Route path="/" element={<Page2 />} />
       <Route path="/coin-flip" element={<Page3 />} />
-      <Route path="/page4" element={<Page4 />} />
-      <Route path="/page5" element={<Page5 />} />
+      <Route path="/guess-the-door" element={<Page4 />} />
+      <Route path="/guess-the-number" element={<Page5 />} />
       <Route path="/page6" element={<Page6 />} />
       <Route path="/page7" element={<Page7 />} />
       <Route path="*" element={<Navigate to="/" replace={true} />} />

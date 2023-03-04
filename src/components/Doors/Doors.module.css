@@ -1,0 +1,18 @@
+.ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.li {
+  width: 150px;
+  height: 216px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 216px;
+  background-color: var(--light-bcg-color);
+  cursor: pointer;
+}
+
+.li:hover {
+  filter: brightness(60%);
+}

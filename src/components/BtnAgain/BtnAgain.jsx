@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 
 import { deleteUser } from "../../redux/userSlice";
-import "./BtnAgain.module.css";
+import s from "./BtnAgain.module.css";
 
 export default function BtnAgain() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export default function BtnAgain() {
   };
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button className={s.button} type="button" onClick={handleClick}>
       Заново
     </button>
   );

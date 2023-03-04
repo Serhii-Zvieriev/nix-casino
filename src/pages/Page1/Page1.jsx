@@ -16,7 +16,7 @@ export default function Page1() {
       createUser({
         name,
         deposit,
-        balance: deposit * 2,
+        balance: +deposit,
       })
     );
     navigate("/page2", { replace: true });
@@ -31,7 +31,7 @@ export default function Page1() {
 
         <input
           type="text"
-          className={s.name}
+          className={`${s.input} ${s.name}`}
           value={name}
           onChange={(e) => setName(e.target.value)}
           autoComplete="off"
@@ -40,7 +40,7 @@ export default function Page1() {
 
         <input
           type="number"
-          className={s.deposit}
+          className={`${s.input} ${s.deposit}`}
           value={deposit}
           onChange={(e) => setDeposit(e.target.value)}
           autoComplete="off"

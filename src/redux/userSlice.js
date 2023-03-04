@@ -12,6 +12,13 @@ export const userSlice = createSlice({
   reducers: {
     createUser: (state, action) => (state = action.payload),
     deleteUser: (state) => (state = initialState),
+    updateBalance: (state, action) => {
+      return {
+        ...state,
+        balance: action.payload,
+      };
+    },
+
     // decrement: (state) => {
     //   state.value -= 1;
     // },
@@ -22,7 +29,7 @@ export const userSlice = createSlice({
   },
 });
 
-export const { createUser, deleteUser } = userSlice.actions;
+export const { createUser, deleteUser, updateBalance } = userSlice.actions;
 
 export const getName = (state) => state.user.name;
 export const getDeposit = (state) => state.user.deposit;
