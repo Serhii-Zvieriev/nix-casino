@@ -1,8 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 
-import getRandomInt from "../../helpers/getRandomInt";
-import { getBalance, updateBalance } from "../../redux/userSlice";
+// import getRandomInt from "../../helpers/getRandomInt";
+
 import Header from "../../components/Header";
 import TitleAndDescription from "../../components/TitleAndDescription";
 import InputNumber from "../../components/InputNumber";
@@ -10,8 +9,6 @@ import LittleSidebar from "../../components/LittleSidebar";
 import s from "./Page5.module.css";
 
 export default function Page5() {
-  const dispatch = useDispatch();
-  let balance = useSelector(getBalance);
   const [gameResult, setGameResult] = useState([]);
 
   const title = "Вгадай число";
@@ -23,7 +20,7 @@ export default function Page5() {
       <div className={s.wrapper}>
         <div className={s.leftSide}>
           <TitleAndDescription title={title} desc={description} />
-          <InputNumber />
+          <InputNumber gameResult={gameResult} setGameResult={setGameResult} />
         </div>
         <LittleSidebar arr={gameResult} />
       </div>

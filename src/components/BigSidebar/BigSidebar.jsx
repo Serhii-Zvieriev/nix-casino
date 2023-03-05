@@ -1,8 +1,9 @@
-import s from "./LittleSidebar.module.css";
-export default function LittleSidebar({ arr }) {
+import s from "./BigSidebar.module.css";
+
+export default function BigSidebar({ arr }) {
   return (
     <aside className={s.aside}>
-      <span> Минулі спроби</span>
+      <h3 className={s.h3}>Результати</h3>
       <ul>
         {arr.map((el, idx) => (
           <li key={idx}>

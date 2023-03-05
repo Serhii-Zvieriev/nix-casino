@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  name: "",
+  name: null,
   deposit: 0,
   balance: 0,
 };
@@ -18,14 +18,6 @@ export const userSlice = createSlice({
         balance: action.payload,
       };
     },
-
-    // decrement: (state) => {
-    //   state.value -= 1;
-    // },
-
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload;
-    // },
   },
 });
 

@@ -20,3 +20,8 @@
   border-radius: 4px;
   overflow: hidden;
 }
+
+.btn {
+  width: 116px;
+  height: 28px;
+}

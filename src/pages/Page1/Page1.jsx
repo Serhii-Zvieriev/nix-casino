@@ -2,6 +2,9 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { createUser } from "../../redux/userSlice";
 import s from "./Page1.module.css";
 
@@ -11,7 +14,27 @@ export default function Page1() {
   const [name, setName] = useState("");
   const [deposit, setDeposit] = useState("");
 
+  const wrongName = () => {
+    toast.error("Введене ім'я недопустиме", { theme: "colored" });
+  };
+
+  const wrongDeposit = () => {
+    toast.error("Сумма депозиту не може бути меньшою чи дорювнювати 0$", {
+      theme: "colored",
+    });
+  };
+
   const addUser = () => {
+    if (name.length < 3) {
+      wrongName();
+      return;
+    }
+
+    if (deposit <= 0) {
+      wrongDeposit();
+      return;
+    }
+
     dispatch(
       createUser({
         name,
@@ -56,6 +79,7 @@ export default function Page1() {
           Почати
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 }

@@ -1,8 +1,13 @@
+import { useSelector } from "react-redux";
+import { getResultGame } from "../../redux/gameSlice";
+
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import BigSidebar from "../../components/BigSidebar/BigSidebar";
 import s from "./Page2.module.css";
 
 export default function Page2() {
+  const resultGame = useSelector(getResultGame);
   return (
     <>
       <Header />
@@ -57,9 +62,10 @@ export default function Page2() {
             Мета гри подвоїти початковий депозит, граючи в ігри
           </p>
         </div>
-        <aside className={s.aside}>
+        <BigSidebar arr={resultGame} />
+        {/* <aside className={s.aside}>
           <h3 className={s.h3}>Результати</h3>
-        </aside>
+        </aside> */}
       </div>
     </>
   );

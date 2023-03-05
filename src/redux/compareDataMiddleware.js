@@ -1,3 +1,5 @@
+// import history from "../helpers/history";
+
 const compareDataMiddleware = (store) => (next) => (action) => {
   const prevState = store.getState();
   const result = next(action);
@@ -7,13 +9,17 @@ const compareDataMiddleware = (store) => (next) => (action) => {
   //   if (prevState !== nextState) {
   //     console.log("Data has changed");
   //   }
+
   if (nextState.user.balance <= 0) {
     console.log("Вы проиграли");
+    // history.push("/loser's-page");
   }
   if (nextState.user.balance / nextState.user.deposit >= 2) {
     console.log("Вы выиграли");
+    // history.push("/winner-page");
   }
 
   return result;
 };
+
 export default compareDataMiddleware;

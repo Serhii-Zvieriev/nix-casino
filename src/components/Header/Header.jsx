@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import BtnAgain from "../BtnAgain/BtnAgain";
 import { getName, getDeposit, getBalance } from "../../redux/userSlice";
 import s from "./Header.module.css";
-export default function Header() {
+export default function Header({ arr }) {
   const name = useSelector(getName);
   const deposit = useSelector(getDeposit);
   const balance = useSelector(getBalance);
@@ -23,7 +23,7 @@ export default function Header() {
       <span>{name}</span>
       <span>Депозит : {deposit} $</span>
       <span>Баланс : {balance} $</span>
-      <BtnAgain />
+      <BtnAgain className={s.btn} />
     </header>
   );
 }

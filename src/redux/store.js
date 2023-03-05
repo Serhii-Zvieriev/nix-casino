@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import compareDataMiddleware from "./compareDataMiddleware";
+// import compareDataMiddleware from "./compareDataMiddleware";
 import userReducer from "./userSlice";
+import gameReducer from "./gameSlice";
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
+    game: gameReducer,
   },
-  middleware: [compareDataMiddleware],
-  // middleware: (getDefaultMiddleware) =>
-  //   getDefaultMiddleware().concat(compareDataMiddleware),
+  // middleware: [compareDataMiddleware],
 });

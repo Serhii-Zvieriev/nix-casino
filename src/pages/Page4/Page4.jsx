@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
+import { updateResultGame } from "../../redux/gameSlice";
 import getRandomInt from "../../helpers/getRandomInt";
-import { getBalance, updateBalance } from "../../redux/userSlice";
+import { getBalance, getDeposit, updateBalance } from "../../redux/userSlice";
 import Header from "../../components/Header";
 import TitleAndDescription from "../../components/TitleAndDescription";
 import Doors from "../../components/Doors";
@@ -12,7 +13,11 @@ import s from "./Page4.module.css";
 export default function Page4() {
   const dispatch = useDispatch();
   let balance = useSelector(getBalance);
+  const deposite = useSelector(getDeposit);
   const [gameResult, setGameResult] = useState([]);
+  const [result, setResult] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+  const resultRef = useRef(result);
 
   const title = "Вгадай двері";
   const description =
@@ -21,15 +26,42 @@ export default function Page4() {
   const handleClick = (e) => {
     let target = e.target.textContent;
     if (getRandomInt(1, 3) === +target) {
-      balance = +Number(balance + (balance / 100) * 5).toFixed(2);
+      balance = +Number(balance + (deposite / 100) * 5).toFixed(2);
       dispatch(updateBalance(balance));
-      setGameResult([...gameResult, { [target]: balance }]);
+      setGameResult([
+        ...gameResult,
+        { [target]: `+${+Number((deposite / 100) * 5).toFixed(2)}` },
+      ]);
+      setResult(+Number(result + (deposite / 100) * 5).toFixed(2));
     } else {
-      balance = +Number(balance - (balance / 100) * 5).toFixed(2);
+      balance = +Number(balance - (deposite / 100) * 5).toFixed(2);
       dispatch(updateBalance(balance));
-      setGameResult([...gameResult, { [target]: balance }]);
+      setGameResult([
+        ...gameResult,
+        { [target]: `-${+Number((deposite / 100) * 5).toFixed(2)}` },
+      ]);
+      setResult(+Number(result - (deposite / 100) * 5).toFixed(2));
     }
   };
+
+  useEffect(() => {
+    return () => {
+      setIsMounted(true);
+      if (isMounted) {
+        resultRef.current > 0
+          ? dispatch(
+              updateResultGame({ "Вгадай двері": `+${resultRef.current}` })
+            )
+          : dispatch(updateResultGame({ "Вгадай двері": resultRef.current }));
+
+        setIsMounted(false);
+      }
+    };
+  }, [dispatch, isMounted]);
+
+  useEffect(() => {
+    resultRef.current = result;
+  }, [result]);
 
   return (
     <div>

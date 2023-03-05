@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  padding-left: 10px;
+  width: 312px;
+  height: 62px;
+  border: none;
+}
+
+.input::placeholder {
+  color: #000;
+}
+
+.btn {
+  width: 200px;
+  height: 68px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: #d74646;
+}
+
+.btn:hover {
+  filter: brightness(80%);
+}

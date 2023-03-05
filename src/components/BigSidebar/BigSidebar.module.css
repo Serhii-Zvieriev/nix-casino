@@ -1,0 +1,15 @@
+.aside {
+  margin-left: 31px;
+  width: 235px;
+  height: 660px;
+  text-align: center;
+  background-color: var(--light-bcg-color);
+}
+
+.h3 {
+  margin-top: 0;
+  margin-bottom: 22px;
+  padding-top: 16px;
+  font-size: 14px;
+  font-weight: 400;
+}
